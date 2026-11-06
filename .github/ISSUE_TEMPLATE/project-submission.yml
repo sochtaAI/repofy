@@ -1,0 +1,48 @@
+name: Suggest an open-source project
+description: Recommend a public GitHub repository for the Repofy directory.
+title: "[Project suggestion]: "
+labels: ["project-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Repofy. Suggestions are reviewed manually and are not automatically published.
+  - type: input
+    id: repository
+    attributes:
+      label: GitHub repository URL
+      description: Link to the public repository you are recommending.
+      placeholder: https://github.com/owner/repository
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why should this project be featured?
+      description: Tell us what it does and who may find it useful.
+      placeholder: A short, specific explanation.
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Best-fit category
+      options:
+        - AI & machine learning
+        - Web development
+        - Android
+        - Python
+        - Self-hosted
+        - Developer tools
+        - Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: This is a public GitHub repository.
+          required: true
+        - label: I have checked that this is not a duplicate suggestion.
+          required: true
