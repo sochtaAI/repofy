@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b16">
+  <meta name="description" content="Discover useful open-source projects, developer tools, AI projects and free software on Repofy.">
+  <meta property="og:title" content="Repofy — Discover Open Source">
+  <meta property="og:description" content="Find your next favourite open-source project.">
+  <title>Repofy — Discover Open Source</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%237c5cff'/%3E%3Cpath d='M28 22h28a22 22 0 0 1 0 44H45v13H28zm17 16v12h11a6 6 0 0 0 0-12z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Repofy home"><span class="brand-mark">R</span><span>repo<span class="brand-accent">fy</span></span></a>
+    <nav><a href="#discover">Discover</a><a href="#categories">Categories</a><a href="https://github.com/sochtaAI/repofy" target="_blank" rel="noreferrer">GitHub ↗</a></nav>
+    <a class="top-cta" href="#discover">Explore projects <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="live-dot"></span> THE OPEN-SOURCE DISCOVERY PLATFORM</div>
+      <h1>Find something<br><span class="gradient-text">worth building.</span></h1>
+      <p class="hero-copy">A curated starting point for brilliant open-source projects, developer tools and ideas from across GitHub.</p>
+      <form class="search-box" id="search-form">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="search-input" type="search" placeholder="Search projects, tools, languages..." autocomplete="off" aria-label="Search open-source projects">
+        <button type="submit">Search <span>↗</span></button>
+      </form>
+      <div class="hero-meta"><span><i></i> Open source, always</span><span>Powered by GitHub public data</span></div>
+      <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
+    </section>
+
+    <section class="stats-strip" aria-label="Platform highlights">
+      <div><strong>Discover</strong><span>Fresh projects</span></div>
+      <div><strong>Explore</strong><span>Across categories</span></div>
+      <div><strong>Build</strong><span>With open tools</span></div>
+      <div class="stats-note">Your next idea starts here <span>✳</span></div>
+    </section>
+
+    <section class="discover-section" id="discover">
+      <div class="section-heading">
+        <div><div class="eyebrow small-eyebrow">THE COMMUNITY'S WORK</div><h2>Explore projects<span class="heading-period">.</span></h2><p>Find useful repositories selected from public GitHub activity.</p></div>
+        <div class="sort-wrap"><label for="sort-select">Sort by</label><select id="sort-select"><option value="stars">Most stars</option><option value="updated">Recently updated</option></select></div>
+      </div>
+      <div class="category-row" id="categories">
+        <button class="category-chip active" data-query="stars:>1000">✦ Popular</button>
+        <button class="category-chip" data-query="topic:artificial-intelligence">✧ AI & ML</button>
+        <button class="category-chip" data-query="topic:web-development">⌘ Web</button>
+        <button class="category-chip" data-query="topic:android">▣ Android</button>
+        <button class="category-chip" data-query="language:Python">⌁ Python</button>
+        <button class="category-chip" data-query="topic:self-hosted">◫ Self-hosted</button>
+      </div>
+      <div class="results-bar"><span id="results-label">Popular open-source projects</span><span id="result-count"></span></div>
+      <div class="project-grid" id="project-grid" aria-live="polite">
+        <div class="loading-card"><span class="loader"></span><p>Finding interesting projects...</p></div>
+        <div class="loading-card"><span class="loader"></span><p>Exploring GitHub...</p></div>
+        <div class="loading-card"><span class="loader"></span><p>Almost there...</p></div>
+      </div>
+      <div class="load-more-wrap"><button class="load-more" id="load-more" hidden>Load more projects <span>↓</span></button></div>
+      <p class="api-note" id="api-note">Project information is fetched live from the GitHub public API. Popularity is based on repository stars, not an endorsement.</p>
+    </section>
+
+    <section class="submit-banner">
+      <div class="submit-icon">↗</div><div><div class="eyebrow small-eyebrow">BUILD IN PUBLIC</div><h2>Made something useful?</h2><p>Share an open-source project with the community.</p></div>
+      <a href="https://github.com/sochtaAI/repofy/issues/new?template=project_submission.md" target="_blank" rel="noreferrer">Suggest a project <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="./"><span class="brand-mark">R</span><span>repo<span class="brand-accent">fy</span></span></a><span>Discover. Explore. Build.</span><span>Project data via <a href="https://docs.github.com/en/rest" target="_blank" rel="noreferrer">GitHub API</a>.</span></footer>
+</body>
+</html>
