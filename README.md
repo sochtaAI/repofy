@@ -2,47 +2,57 @@
 
 **Discover. Explore. Build.**
 
-Repofy is a lightweight, mobile-first open-source discovery website. It helps people explore public GitHub repositories across AI, web development, Android, Python and self-hosted software.
+Repofy is an independent, mobile-first directory for discovering public open-source software on GitHub. It helps developers, students and curious builders find useful repositories across AI, web development, Android, Python and self-hosted software.
 
-## Current features
+🌐 **Website:** https://repofy.qd.je/  
+💻 **Repository:** https://github.com/sochtaAI/repofy
 
-- Live repository search using the GitHub public REST API
-- Popular, AI & ML, Web, Android, Python and Self-hosted discovery filters
-- Sort by stars or recently updated
-- Repository cards with owner, description, stars, language and last update
-- Responsive layout for mobile and desktop
-- No API key or backend required for the first version
+## What works today
+
+- Live repository search powered by the GitHub public REST API
+- Discovery filters for popular projects, AI & machine learning, web, Android, Python and self-hosted software
+- Sorting by stars or recently updated
+- Repository cards with owner, description, language, stars and update date
+- Repository detail pages with metadata, topics and a README preview
+- Local bookmarks stored in the current browser
+- Responsive layouts for mobile and desktop
+- Static hosting; no application server or API key required
 
 ## Run locally
 
-Open `index.html` in a browser, or serve this folder with any static file server.
+Open `index.html` in a browser, or serve the repository folder with any static file server.
 
-## Deploy with GitHub Pages
+## GitHub Pages deployment
 
-1. Open the repository's **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select branch `main` and folder `/ (root)`.
-4. Save and wait for the Pages deployment.
-5. Your project site will be available at `https://sochtaAI.github.io/repofy/` once GitHub Pages finishes publishing.
+1. Open **Settings → Pages** in this repository.
+2. Under **Build and deployment**, select **Deploy from a branch**.
+3. Select branch `main` and folder `/(root)`.
+4. Save and wait for the deployment to finish.
 
-## GitHub API notes
+The custom domain is stored in the root `CNAME` file as `repofy.qd.je`. In the domain provider's DNS settings, create:
 
-Repofy uses the unauthenticated public endpoint `GET https://api.github.com/search/repositories`. GitHub applies rate limits to unauthenticated requests. The site displays a friendly message when the limit is reached. Search results are live GitHub data; the Popular filter sorts repositories by stars and is not a formal endorsement or a precise real-time trending feed.
+| Type | Host / Name | Target |
+|---|---|---|
+| CNAME | `repofy` | `sochtaAI.github.io` |
 
-## Project data and attribution
+If the provider uses a different DNS interface, keep the host as the subdomain `repofy` and point it to `sochtaAI.github.io`. Do not add a URL path. Then return to **Settings → Pages**, confirm the custom domain is `repofy.qd.je`, and enable **Enforce HTTPS** once GitHub reports the certificate is ready. DNS and certificate provisioning can take time.
 
-Repository names, descriptions, owners, languages, star counts, update dates and links are retrieved from GitHub. Each repository links to its original GitHub page. Repofy is an independent discovery project and is not affiliated with GitHub.
+The GitHub Pages fallback URL remains https://sochtaAI.github.io/repofy/.
+
+## GitHub API behaviour and limitations
+
+Repofy uses unauthenticated public GitHub API endpoints. GitHub applies rate limits to unauthenticated traffic, so search may temporarily fail when the shared limit is exhausted. Repository data is live and controlled by GitHub; Repofy does not independently verify project quality, security, maintenance status or licensing.
+
+The “Popular” collection is a star-based discovery view, not a formal endorsement or a guaranteed real-time trending feed. Saved projects use browser localStorage and are not synced across devices or browsers.
+
+## Suggest a project
+
+Use the **Suggest a project** link on the website to open a structured GitHub issue. Submissions are suggestions, not automatic listings; maintainers should review the repository for relevance, accessibility, licensing clarity and basic project quality before featuring it.
+
+## Attribution
+
+Repository names, descriptions, owners, languages, star counts, dates and links are retrieved from GitHub. Each project links to its original repository. Repofy is an independent project and is not affiliated with GitHub.
 
 ## License
 
-No project license has been selected yet. Do not assume this repository is open for reuse until a license is added.
-
-
-## Phase 2 features
-
-- Repository detail pages at `project.html?repo=owner/name`
-- Repository metadata: stars, forks, open issues, language, license, topics and dates
-- README preview when the repository exposes a root `README.md`
-- Save and remove bookmarks from project cards and detail pages
-- Saved projects are stored in the current browser's localStorage; they are not synced across devices or browsers
-
+No license has been selected for this repository yet. Until a license is added, do not assume that the source code is available for reuse.
