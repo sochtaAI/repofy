@@ -33,9 +33,12 @@ The custom domain is stored in the root `CNAME` file as `repofy.qd.je`. In the d
 
 | Type | Host / Name | Target |
 |---|---|---|
-| CNAME | `repofy` | `sochtaAI.github.io` |
+| A | `@` (or blank/root) | `185.199.108.153` |
+| A | `@` (or blank/root) | `185.199.109.153` |
+| A | `@` (or blank/root) | `185.199.110.153` |
+| A | `@` (or blank/root) | `185.199.111.153` |
 
-If the provider uses a different DNS interface, keep the host as the subdomain `repofy` and point it to `sochtaAI.github.io`. Do not add a URL path. Then return to **Settings → Pages**, confirm the custom domain is `repofy.qd.je`, and enable **Enforce HTTPS** once GitHub reports the certificate is ready. DNS and certificate provisioning can take time.
+These are GitHub Pages' standard apex-domain IPv4 records. Do not create a CNAME at the root unless the DNS provider explicitly supports ALIAS/ANAME or CNAME flattening. Optionally, if you later use `www.repofy.qd.je`, add a CNAME for host `www` pointing to `sochtaAI.github.io`. Then return to **Settings → Pages**, confirm the custom domain is `repofy.qd.je`, and enable **Enforce HTTPS** once GitHub reports the certificate is ready. DNS and certificate provisioning can take time.
 
 The GitHub Pages fallback URL remains https://sochtaAI.github.io/repofy/.
 
