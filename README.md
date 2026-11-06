@@ -36,3 +36,13 @@ Repository names, descriptions, owners, languages, star counts, update dates and
 ## License
 
 No project license has been selected yet. Do not assume this repository is open for reuse until a license is added.
+
+
+## Phase 2 features
+
+- Repository detail pages at `project.html?repo=owner/name`
+- Repository metadata: stars, forks, open issues, language, license, topics and dates
+- README preview when the repository exposes a root `README.md`
+- Save and remove bookmarks from project cards and detail pages
+- Saved projects are stored in the current browser's localStorage; they are not synced across devices or browsers
+
